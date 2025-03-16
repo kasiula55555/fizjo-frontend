@@ -1,0 +1,22 @@
+.services {
+    padding: 60px 0;
+    background-color: #ffffff;
+  }
+  
+  .serviceGrid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .card {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  

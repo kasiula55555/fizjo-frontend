@@ -1,63 +1,35 @@
-import { Link, useLocation } from 'react-router-dom';
-import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import styles from '../style/Navbar.module.css';
 
 function Navbar() {
-  const location = useLocation();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  // Zamykamy menu po kliknięciu
-  const closeMenu = () => setIsMenuOpen(false);
-
   return (
-    <nav className={`navbar navbar-expand-lg navbar-light bg-light ${styles.navbar}`}>
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container">
-        <Link className={`navbar-brand ${styles['navbar-brand']}`} to="/" onClick={closeMenu}>
-          Fizjoterapia
-        </Link>
+        <NavLink className="navbar-brand" to="/">Fizjoterapia</NavLink>
         <button 
           className="navbar-toggler" 
           type="button" 
           data-bs-toggle="collapse" 
           data-bs-target="#navbarNav"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div 
-          className={`collapse navbar-collapse ${isMenuOpen ? 'show' : ''} ${isMenuOpen ? styles['menu-enter'] : ''}`} 
-          id="navbarNav"
-        >
+        <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <Link className={`nav-link ${location.pathname === '/' ? 'active' : ''}`} to="/" onClick={closeMenu}>
-                Strona Główna
-              </Link>
+              <NavLink className="nav-link" to="/" activeClassName={styles.active}>Strona Główna</NavLink>
             </li>
             <li className="nav-item">
-              <Link className={`nav-link ${location.pathname === '/o-mnie' ? 'active' : ''}`} to="/o-mnie" onClick={closeMenu}>
-                O mnie
-              </Link>
+              <NavLink className="nav-link" to="/o-mnie" activeClassName={styles.active}>O mnie</NavLink>
             </li>
             <li className="nav-item">
-              <Link className={`nav-link ${location.pathname === '/uslugi' ? 'active' : ''}`} to="/uslugi" onClick={closeMenu}>
-                Usługi
-              </Link>
+              <NavLink className="nav-link" to="/uslugi" activeClassName={styles.active}>Usługi</NavLink>
             </li>
             <li className="nav-item">
-              <Link className={`nav-link ${location.pathname === '/opinie' ? 'active' : ''}`} to="/opinie" onClick={closeMenu}>
-                Opinie
-              </Link>
+              <NavLink className="nav-link" to="/kontakt" activeClassName={styles.active}>Kontakt</NavLink>
             </li>
             <li className="nav-item">
-              <Link className={`nav-link ${location.pathname === '/kontakt' ? 'active' : ''}`} to="/kontakt" onClick={closeMenu}>
-                Kontakt
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="btn btn-primary" to="/rezerwacja" onClick={closeMenu}>
-                Umów wizytę
-              </Link>
+              <NavLink className="btn btn-primary" to="/rezerwacja">Umów wizytę</NavLink>
             </li>
           </ul>
         </div>

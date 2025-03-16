@@ -1,31 +1,62 @@
 .hero {
+    background: url('../assets/fizjo.jpg') center/cover no-repeat;
     height: 80vh;
-    background: url('../assets/hero-bg.jpg') no-repeat center center/cover;
     display: flex;
     align-items: center;
-    text-align: center;
+    justify-content: center;
     color: white;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
   }
   
-  .hero-content {
-    max-width: 600px;
-    margin: auto;
-  }
-  
-  .hero-title {
-    font-size: 2.5rem;
+  .title {
+    font-size: 3rem;
     font-weight: bold;
+    animation: fadeInDown 1s ease-in-out;
   }
   
-  .hero-btn {
-    background-color: var(--primary-color);
+  .subtitle {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    animation: fadeInUp 1.2s ease-in-out;
+  }
+  
+  .ctaButton {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: #0d6efd;
     color: white;
-    padding: 10px 20px;
+    font-size: 1.2rem;
+    text-decoration: none;
     border-radius: 5px;
-    transition: 0.3s;
+    transition: transform 0.3s ease, background-color 0.3s;
   }
   
-  .hero-btn:hover {
-    background-color: var(--secondary-color);
+  .ctaButton:hover {
+    transform: scale(1.05);
+    background-color: #0056b3;
+  }
+  
+  /* Animacje */
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   
